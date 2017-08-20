@@ -15,7 +15,11 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+      //You can basically limit the amount of posts that you want to display
+      //  $posts = Post::OrderBy('title', 'desc')->take(1)->get();
+      //Bottom in an example to paginate your posts depending upon your parameter for number of posts
+      $posts = Post::OrderBy('title', 'desc')->paginate(1);
+
         return view('posts.index')->with('posts', $posts);
     }
 

@@ -10,6 +10,8 @@
       </div>
 
     @endforeach
+    //For pagination
+    {{$posts->links()}}
   @else
     <h3>No Posts found.</h3>
   @endif

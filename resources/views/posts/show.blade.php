@@ -6,7 +6,6 @@
 
   <div>
   {{$posts->body}}
-  asd
   </div>
 
   <hr>
