@@ -5,12 +5,22 @@
   @if (count($posts)>0)
     @foreach ($posts as $post)
       <div class="well">
-        <h1><a href="posts\ {{$post->id}}">{{$post->title}}</a></h1>
-        <small>Written on {{$post->created_at}}</small>
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+            <img src="/storage/cover_image/{{$post->cover_image}}" style="width: 100%">
+          </div>
+          <div class="col-md-8 col-sm-8">
+            <h1><a href="posts\ {{$post->id}}">{{$post->title}}</a></h1>
+            <!--Using the relatiobship-->
+            <small>Written on {{$post->created_at}} by {{$post->user->name}}</small>
+          </div>
+
+        </div>
+
       </div>
 
     @endforeach
-    //For pagination
+    <!--For pagination-->
     {{$posts->links()}}
   @else
     <h3>No Posts found.</h3>

@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    //Establishing a User post relationship using laravels model relationships. Use documentation to better understand this.
+
+    public function posts(){
+
+      return $this->hasMany('App\Post');
+    }
+
+
 }

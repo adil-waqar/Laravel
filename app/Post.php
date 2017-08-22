@@ -12,5 +12,14 @@ class Post extends Model
     public $primaryKey = 'id';
     //timestamps
     public $timestamps = true;
+    //Establishing a User post relationship using laravels model relationships. Use documentation to better understand this.
+    public function user(){
+
+      return $this->belongsTo('App\User');
+
+    }
+
+
+
 
 }
